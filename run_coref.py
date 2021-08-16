@@ -56,6 +56,7 @@ def get_resolved(doc, clusters):
 def main():
     # Load your usual SpaCy model (one of SpaCy English models)
     nlp = spacy.load('en_core_web_sm')
+    nlp.max_length = 1500000
 
     # Add neural coref to SpaCy's pipe
     neuralcoref.add_to_pipe(nlp, blacklist=True)
